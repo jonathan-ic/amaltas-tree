@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Glory of India: Amaltas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --golden: #FFD700;
+            --dark-green: #2E8B57;
+            --light-green: #90EE90;
+            --cream: #FFFDD0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--golden), var(--dark-green));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+        
+        .image-container {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+            transform-origin: center center;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+        
+        .intro-text {
+            flex: 1;
+            min-width: 300px;
+            animation: fadeInRight 1s ease;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--golden);
+        }
+        
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .fact-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--golden);
+            transition: all 0.3s ease;
+        }
+        
+        .fact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .fact-item i {
+            color: var(--golden);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            background-color: var(--dark-green);
+            color: white;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .petal {
+            position: absolute;
+            background-color: var(--golden);
+            border-radius: 50% 0 50% 50%;
+            opacity: 0.7;
+            animation: falling linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes falling {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Amaltas</h1>
+            <p class="subtitle">The Golden Shower Tree of India</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="hero">
+            <div class="image-container">
+                <img src="https://nurserynisarga.in/wp-content/uploads/2019/09/cassia-fistula.webp" 
+                     alt="Golden Amaltas Tree in Full Bloom" 
+                     loading="lazy">
+            </div>
+            
+            <div class="intro-text">
+                <div class="card">
+                    <h2>Cassia fistula</h2>
+                    <p>The Amaltas, nature's golden chandelier, transforms Indian summers into a visual symphony. This deciduous marvel grows 10-15m tall, with pinnate leaves that fold up at night in a sleeping posture called nyctinasty.</p>
+                    <p>Beyond its beauty, every part serves a purpose - from its bark used in tanning to flowers that yield yellow dye for monk's robes in Thailand.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="card">
+                <h2>Botanical Marvels</h2>
+                <p>The Amaltas showcases incredible biological adaptations:</p>
+                
+                <div class="facts-grid">
+                    <div class="fact-item">
+                        <i>🧬</i>
+                        <h3>Genetic Resilience</h3>
+                        <p>Contains 28 chromosomes (2n=28) with drought-resistant genes</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>🌡</i>
+                        <h3>Thermal Regulation</h3>
+                        <p>Leaf orientation changes to reduce water loss in extreme heat</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>🌸</i>
+                        <h3>Floral Clock</h3>
+                        <p>Flowers open at 5:30-6:30 AM and fall by afternoon</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>🐝</i>
+                        <h3>Pollination Magic</h3>
+                        <p>10+ bee species visit each tree daily for nectar robbery</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>🌱</i>
+                        <h3>Seed Dispersal</h3>
+                        <p>Hard seeds pass through animal guts unharmed for propagation</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>💧</i>
+                        <h3>Water Storage</h3>
+                        <p>Taproot reaches 15m deep to access groundwater</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="card">
+                <h2>Sacred Connections</h2>
+                <p>The tree's spiritual significance across cultures:</p>
+                <div class="facts-grid">
+                    <div class="fact-item">
+                        <i>🕉️</i>
+                        <h3>Vishnu's Favorite</h3>
+                        <p>In Kerala, believed to be the divine "Konna" offered to Krishna</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>📿</i>
+                        <h3>Buddhist Symbol</h3>
+                        <p>Grows at many Thai temples representing spiritual abundance</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>🎎</i>
+                        <h3>Tamil Tradition</h3>
+                        <p>Kondrai flowers used in wedding garlands for prosperity</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>📅</i>
+                        <h3>New Year Ritual</h3>
+                        <p>In Vishu festival, flowers are first sight for good luck</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>🖌️</i>
+                        <h3>Artistic Muse</h3>
+                        <p>Featured in Mughal miniatures and Raja Ravi Varma paintings</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>📜</i>
+                        <h3>Literary Star</h3>
+                        <p>Mentioned in Tamil Sangam poetry as "the tree that rains gold"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="card">
+                <h2>Modern Applications</h2>
+                <p>Contemporary uses of this ancient wonder:</p>
+                <div class="facts-grid">
+                    <div class="fact-item">
+                        <i>💊</i>
+                        <h3>Cancer Research</h3>
+                        <p>Fistulin compound shows anti-leukemia properties</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>🌿</i>
+                        <h3>Eco-Dye</h3>
+                        <p>Flowers used for sustainable fabric coloring</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>🍯</i>
+                        <h3>Gourmet Ingredient</h3>
+                        <p>Michelin chefs use pulp in avant-garde desserts</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>🏙️</i>
+                        <h3>Urban Warrior</h3>
+                        <p>Planting priority in Delhi for heat island mitigation</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>🧴</i>
+                        <h3>Cosmeceuticals</h3>
+                        <p>Flower extracts in anti-aging serums</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <i>📱</i>
+                        <h3>Digital Fame</h3>
+                        <p>#AmaltasBloom gets 2M+ posts every summer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="card">
+                <h2>Conservation Corner</h2>
+                <p>Protecting this golden heritage:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Climate Threat:</strong> Early blooming observed due to rising temperatures</li>
+                    <li><strong>Urban Challenge:</strong> Only 1 in 5 saplings survive Delhi's concrete</li>
+                    <li><strong>Hope Spots:</strong> Kerala's sacred groves preserve 200+ year old specimens</li>
+                    <li><strong>Citizen Science:</strong> IIT Delhi's Amaltas mapping project</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 | The Golden Glory of India: Amaltas</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">"Like the Amaltas that blooms after harsh summers, may challenges only make you shine brighter"</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced petal animation with 50% more petals
+        function createPetals() {
+            const colors = ['#FFD700', '#FFC300', '#FFDB58', '#FADA5E'];
+            const body = document.body;
+            
+            for (let i = 0; i < 30; i++) {  // Increased from 20 to 30 petals
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                
+                // Random properties
+                const size = Math.random() * 20 + 5;  // Bigger size variation
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * window.innerWidth;
+                const delay = Math.random() * 8;
+                const duration = Math.random() * 15 + 10;
+                const blur = Math.random() * 3;
+                
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size}px`;
+                petal.style.backgroundColor = color;
+                petal.style.left = `${left}px`;
+                petal.style.animationDelay = `${delay}s`;
+                petal.style.animationDuration = `${duration}s`;
+                petal.style.filter = `blur(${blur}px)`;
+                
+                body.appendChild(petal);
+            }
+        }
+        
+        window.addEventListener('load', createPetals);
+    </script>
+</body>
+</html>
